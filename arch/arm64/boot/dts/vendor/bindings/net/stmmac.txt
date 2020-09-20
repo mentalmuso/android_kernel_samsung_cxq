@@ -83,7 +83,7 @@ Optional properties:
 	- For each RX queue
 		- Choose one of these modes:
 			- snps,dcb-algorithm: Queue to be enabled as DCB
-			- snps,avb-algorithm: Queue to be enabled as AVB
+			- snps-algorithm: Queue to be enabled as AVB
 		- snps,map-to-dma-channel: Channel to map
 		- Specifiy specific packet routing:
 			- snps,route-avcp: AV Untagged Control packets
@@ -104,7 +104,7 @@ Optional properties:
 		- snps,weight: TX queue weight (if using a DCB weight algorithm)
 		- Choose one of these modes:
 			- snps,dcb-algorithm: TX queue will be working in DCB
-			- snps,avb-algorithm: TX queue will be working in AVB
+			- snps-algorithm: TX queue will be working in AVB
 			  [Attention] Queue 0 is reserved for legacy traffic
 			  and so no AVB is available in this queue.
 		- Configure Credit Base Shaper (if AVB Mode selected):
@@ -141,7 +141,7 @@ Examples:
 		};
 
 		queue1 {
-			snps,avb-algorithm;
+			snps-algorithm;
 			snps,send_slope = <0x1000>;
 			snps,idle_slope = <0x1000>;
 			snps,high_credit = <0x3E800>;
